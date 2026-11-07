@@ -1,8 +1,8 @@
 # Release and deployment checklist
 
-This checklist records required gates. Unchecked deployment items are not
-claims of successful execution. See the actual test/audit reports supplied
-with the candidate for local results and environment details.
+Deployment verified on 7 November 2026. See TESTING.md for the exact checks,
+versions and limitations, including the distinction between browser inspection
+and fresh unauthenticated protocol-client testing.
 
 ## Before publication
 
@@ -21,15 +21,19 @@ with the candidate for local results and environment details.
 
 ## After approval, before announcing a public app
 
-- [ ] Publish only the approved source tree.
-- [ ] GitHub Actions passes on Ubuntu and Windows with the exact deployed dependencies.
-- [ ] Community Cloud installs CoolProp/SciPy/H2PipeBench and starts without errors.
-- [ ] The real URL runs the default, comparison and compressor examples successfully.
-- [ ] Unsupported cases give useful errors with no fabricated outputs or private traceback.
-- [ ] Downloads match the displayed run and contain no private/session data.
-- [ ] Desktop, tablet and mobile layouts are usable.
-- [ ] A signed-out browser can access and run the app without login or payment.
-- [ ] Record URL, repository, commit, deployed versions, date and verification evidence.
-- [ ] Prepare a proposed manuscript update only after the public app passes these checks.
+- [x] Publish only the approved source tree.
+- [x] GitHub Actions passes on Ubuntu and Windows with the pinned dependencies.
+- [x] Community Cloud installs CoolProp/SciPy/H2PipeBench and executes the solver.
+- [x] The real URL runs the default, comparison and compressor examples successfully.
+- [x] Tested invalid geometry gives a useful error with no substituted result or traceback.
+- [x] Actual CSV/JSON/report/PNG/SVG exports retrieved; profile values checked against references.
+- [x] Desktop, tablet and mobile viewport layouts visually inspected.
+- [x] Public sharing enabled; fresh unauthenticated client runs the app and downloads results.
+- [x] Record URL, repository, tested source commit, deployed scientific versions and evidence.
+- [x] Prepare a separate proposed manuscript update after public-app verification; manuscripts unchanged.
+
+The anonymous-access check used a fresh HTTP/WebSocket client, not a signed-out
+browser profile. The browser's cloud PNG event was not captured; its actual
+generated payload was successfully retrieved separately. See TESTING.md.
 
 Do not convert numerical agreement into an experimental-validation claim.

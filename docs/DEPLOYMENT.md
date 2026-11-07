@@ -3,7 +3,8 @@
 GitHub destination: `dimitrispasias57-eng/H2PipeBench`, separate from
 `microstructai-reproducible-benchmark`. The maintainer authorised publication
 on 7 November 2026. The project uses MIT with the public account handle in
-the copyright notice. Actual app availability must be checked after deployment.
+the copyright notice. Public deployment was verified on that date:
+https://h2pipebench.streamlit.app/. See TESTING.md for executed checks and limits.
 
 ## Release scope
 
@@ -26,11 +27,10 @@ are unchanged. Only this standalone tree belongs in the public repository.
 | Streamlit configuration | Root `.streamlit/config.toml` |
 | Secrets | None required; leave empty |
 | App access | Public / anyone with the link; no visitor login |
-| Subdomain | Request `h2pipebench` if available; actual URL only after successful deployment |
+| Subdomain | `h2pipebench.streamlit.app` — assigned and verified |
 
-The subdomain is a request, not an existing URL or availability claim. Use a
-different approved name if unavailable. `.python-version` documents local use;
-Community Cloud's Python dropdown is the deployment setting.
+`.python-version` documents local use; Community Cloud's Python dropdown is
+the deployment setting. The live deployment explicitly uses Python 3.12.
 
 Do not modify the MicroStructAI repository or its settings. Do not enable paid
 plans, trials, Codespaces, larger Actions runners, paid domains or paid hosting.
@@ -73,10 +73,9 @@ guard prevents accidentally running the workflow in a private repository.
     test records, date, anonymous-access result and approved manifest. Only then
     describe the app as publicly deployed.
 
-If authentication or approval is unavailable, leave the candidate local and
-report the precise pending step. Never invent a public URL. Once the app is
-approved and works online, propose a separate short SoftwareX manuscript
-update; do not edit the current manuscripts during app preparation.
+For later releases, obtain any newly necessary authentication or approval before
+publishing outside the approved scope. Propose manuscript updates separately;
+do not edit the research manuscripts as part of application deployment.
 
 ## Official deployment references (checked 7 November 2026)
 

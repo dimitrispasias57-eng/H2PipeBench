@@ -1,8 +1,12 @@
 {
-  "candidate": "H2PipeBench 0.1.0rc1-web1 publication review",
-  "repository": "dimitrispasias57-eng/H2PipeBench",
-  "status": "MIT release; publication authorised by maintainer on 7 November 2026",
-  "hosting": "Free GitHub public repository and Streamlit Community Cloud only",
+  "release": "H2PipeBench 0.1.0rc1-web1",
+  "repository": "https://github.com/dimitrispasias57-eng/H2PipeBench",
+  "public_app": "https://h2pipebench.streamlit.app/",
+  "licence": "MIT",
+  "copyright": "2026 dimitrispasias57-eng",
+  "status": "Published with maintainer authorisation; online verification completed 7 November 2026",
+  "tested_source_commit": "c7db556f183111d836876b30e30715a975caeeda",
+  "scope": "Every payload file; manifest excludes itself; Git metadata is not part of distribution.",
   "files": [
     {
       "path": ".gitattributes",
@@ -51,8 +55,8 @@
     },
     {
       "path": "docs/DEPENDENCIES_AND_LICENCES.md",
-      "bytes": 3510,
-      "sha256": "a1a531beec7fde324a63eeb3fd58ae5d2b9d9c06fdb9fc4cefe5a9652d6fae87"
+      "bytes": 3557,
+      "sha256": "e8e7b26ef35ec131010ca39f533ebd3a0c3922bf0425ff9f8d8afe6509216f38"
     },
     {
       "path": "docs/dependency_inventory.json",
@@ -61,13 +65,13 @@
     },
     {
       "path": "docs/DEPLOYMENT.md",
-      "bytes": 5774,
-      "sha256": "4da9fa823acdb370b5533c438fa2461e79acd6f0944da3f2096afc8b5518cace"
+      "bytes": 5688,
+      "sha256": "2a78014a8341d441b3a62c3d6d67ec74931187e4fac7972a03d55242675f77d6"
     },
     {
       "path": "docs/RELEASE_CHECKLIST.md",
-      "bytes": 2493,
-      "sha256": "2112f92557a0eb09aded6f4833cad21f022809629f62273f9239e3cad5a952be"
+      "bytes": 2785,
+      "sha256": "88bb036f06d5522fdc8ae3a6aec697e4cb3f77b911846a67eb10070799164467"
     },
     {
       "path": "docs/SCIENCE.md",
@@ -86,8 +90,8 @@
     },
     {
       "path": "docs/TESTING.md",
-      "bytes": 3855,
-      "sha256": "be89ad0e365d1ba920ad8bbad180653f28bc570343753859c402ae245e4615fe"
+      "bytes": 5634,
+      "sha256": "879b38104cd4fa2e90ac7bbe92d5d644a0910f755e5b8e75471a633e19e6d00f"
     },
     {
       "path": "docs/third_party_notices/altair__altair-6.3.0.dist-info_licenses_LICENSE",
@@ -536,8 +540,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5166,
-      "sha256": "1ef006affd37f0faf623a6b6e7a3f0e130fc715a11a32dcef577b4c47452b0ad"
+      "bytes": 5627,
+      "sha256": "a8142ebe4faea6b276a1a1e5bb17494f09c30a7dd1a888d002f2336891f1de64"
     },
     {
       "path": "requirements-dev.txt",
@@ -679,6 +683,5 @@
       "bytes": 954,
       "sha256": "82e48f85e5308a14609d95cf4a1f64d9dcaa4d356e0398b5f5f37dd4b3230ed8"
     }
-  ],
-  "manifest_scope": "All payload files; this manifest excludes itself. Local .git metadata is not distributed."
+  ]
 }

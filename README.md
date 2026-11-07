@@ -1,10 +1,18 @@
 # H2PipeBench — Hydrogen Pipeline Simulator
 
+**[Open the public simulator](https://h2pipebench.streamlit.app/)** — free browser
+access, with no visitor login or Python installation required.
+
 A Streamlit interface to H2PipeBench 0.1.0rc1 for steady, one-dimensional,
 horizontal pure-hydrogen pipeline calculations. It calls the actual package;
 there is no replacement hydraulic solver in the UI. Project code and geometry
 are distributed under the [MIT licence](LICENSE). Dependencies retain their
 upstream terms. Source: [dimitrispasias57-eng/H2PipeBench](https://github.com/dimitrispasias57-eng/H2PipeBench).
+
+The [initial public CI run](https://github.com/dimitrispasias57-eng/H2PipeBench/actions/runs/42388470631)
+passed all **87 tests on both Ubuntu and Windows**. The live default result and
+its 801-point exported profile were checked against retained references.
+See [testing evidence and limits](docs/TESTING.md).
 
 ## Run locally
 

@@ -49,15 +49,16 @@ was incomplete for five because their responses could not be parsed in full.
 Its empty advisory lists are not a substitute for those missing responses.
 The complete OSV lookup is the reported advisory result.
 
-## Linux boundary
+## Linux execution
 
-No working Linux, WSL, Docker or Podman environment was available on the host.
-No Linux execution has been claimed. Registry metadata lists CPython 3.12
-manylinux x86-64 wheels for CoolProp 8.0.0 and SciPy 1.16.3, and a universal
-wheel for Streamlit 1.67.0. This demonstrates availability only; it does not
-establish successful installation, shared-library loading or solver execution.
+No suitable Linux environment was available locally. After publication, the
+standard GitHub-hosted Ubuntu runner installed requirements-dev.txt, passed
+`pip check`, and passed all 87 tests on Python 3.12.16. The Windows runner also
+passed all 87 tests on Python 3.12.10. Evidence:
+https://github.com/dimitrispasias57-eng/H2PipeBench/actions/runs/42388470631
 
-The included Ubuntu/Windows CI matrix must pass after the approved repository
-is created. Community Cloud must then be checked on its actual Linux runtime,
-including a real simulation, four-model comparison, compression and exports.
-Do not bypass a Linux failure by silently changing the verified physics stack.
+The Streamlit Community Cloud app also executed the actual solver with
+CoolProp 8.0.0, NumPy 2.5.4, SciPy 1.16.3 and pandas 2.3.3. The default run's
+801-point CSV matched all 21 numeric columns of the retained reference within
+rtol=2e-9 and atol=1e-7. These are execution and regression checks, not evidence
+of experimental accuracy or a guarantee of compatibility with other versions.

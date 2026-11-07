@@ -1,4 +1,4 @@
-# Executed verification and pending deployment checks
+# Executed verification and deployment checks
 
 Date: 7 November 2026. Environment: a new Windows x86-64 virtual environment,
 CPython 3.12.14. Installation used this distribution's requirements-dev.txt.
@@ -54,10 +54,36 @@ python -m pytest -q
 python -m streamlit run app.py
 ```
 
-## Still pending
+## Public deployment checks: 7 November 2026
 
-- Linux execution: no suitable local environment was available. The prepared
-  CI workflow has not been run on a remote host.
-- Public hosting, anonymous visitor access and cloud resource behaviour.
-- Full-scale experimental accuracy remains unestablished independently of
-  the software installation and browser checks.
+Source commit `c7db556f183111d836876b30e30715a975caeeda` passed the complete
+87-test suite on both GitHub-hosted Ubuntu (Python 3.12.16, 26.84 s) and Windows
+(Python 3.12.10, 16.44 s), including installation and `pip check`.
+[Executed CI logs](https://github.com/dimitrispasias57-eng/H2PipeBench/actions/runs/42388470631).
+
+The deployed app is https://h2pipebench.streamlit.app/. Community Cloud was
+configured for Python 3.12, main branch, app.py and no secrets. The real default
+calculation returned the exact reference outlet pressure and temperature above.
+A fresh HTTP/WebSocket client, supplied with no account credentials or browser
+cookies, executed the default calculation and retrieved CSV, JSON, HTML, PNG
+and SVG exports. Its 801-point CSV matched every one of the 21 numeric reference
+columns with rtol=2e-9, atol=1e-7. PNG and SVG payload formats were checked.
+The fresh-client test is distinct from the signed-in browser UI inspection.
+
+The deployed browser UI completed M1–M4 comparison and the 7 MPa delivery
+calculation (7.098695 MPa required inlet, 16.147618 MW total power,
+214.489 kW incremental power). An invalid 0.02 m burial depth produced the
+explicit outside-radius error and removed stale results. Layouts were visually
+inspected at 1440×1100, 768×1024 and 390×844. These are viewport checks,
+not tests on physical phones. The sharing dialog showed public access enabled.
+
+The browser automation did not report a cloud PNG download event within its
+timeout; direct unauthenticated retrieval of the generated PNG and SVG succeeded,
+and the PNG was visually inspected. This separates browser-event instrumentation
+from actual export availability. No signed-out browser profile was created;
+anonymous execution was tested using the independent fresh protocol client above.
+
+The live service rejected an overlapping calculation with its intended busy
+message. This verifies admission behaviour for that test, not load capacity.
+Full-scale experimental accuracy remains unestablished independently of these
+installation, browser and regression checks.
