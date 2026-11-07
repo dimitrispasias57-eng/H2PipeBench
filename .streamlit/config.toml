@@ -1,0 +1,22 @@
+[theme]
+base = "light"
+primaryColor = "#087f8c"
+backgroundColor = "#f6f8fa"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#173044"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+headless = true
+enableCORS = true
+enableXsrfProtection = true
+maxUploadSize = 1
+maxMessageSize = 10
+fileWatcherType = "none"
+
+[client]
+showErrorDetails = "none"
+toolbarMode = "viewer"

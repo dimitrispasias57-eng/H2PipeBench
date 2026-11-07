@@ -1,0 +1,63 @@
+# Executed verification and pending deployment checks
+
+Date: 7 November 2026. Environment: a new Windows x86-64 virtual environment,
+CPython 3.12.14. Installation used this distribution's requirements-dev.txt.
+The Python process and dependencies were separate from the research environment.
+
+The initial complete test run passed **87 tests**. `pip check` reported no
+broken requirements. The scientific source hash check includes every one of
+the 14 packaged Python files. Additional release sealing repeats the suite
+after any app changes; the owner review record identifies the final run.
+
+| Check | Executed evidence |
+|---|---|
+| Retained solver regression tests | Analytical isothermal limit, thermodynamic derivatives, conservation, convergence, compressor/inverse checks, invalid domains and separate solid-conduction verification |
+| Forward example A | Every numeric profile column compared with the retained 801-point CSV; relative tolerance 2e-9, absolute 1e-7 for this regression comparison |
+| Comparison example B | Four formulations compared with retained 100 km, 300 mm, 3 kg/s, 12 MPa, 333.15 K output |
+| Inverse/compressor example A | Required inlet, total and incremental power agree with retained values; delivery residual below 0.1 Pa |
+| Interface conversions | All geometry, operating, thermal and option fields reach the public API in their stated units |
+| Alternatives and invalid cases | Haaland, Dittus–Boelter, acceleration omission and adiabatic switches executed; invalid geometry, nonfinite values and unsupported trajectories rejected |
+| Downloads | CSV/JSON values and chart arrays checked against the result snapshot; PNG signature and SVG generated; HTML includes assumptions and units |
+| Execution safeguards | Busy admission, request spacing, worker-start failure and real subprocess timeout exercised |
+| Streamlit AppTest | Actual forward, comparison and compressor calculations; temperature conversion, figure generation, invalidation and information pages |
+| Browser | Actual local server, forward/comparison/compressor forms, invalid geometry and CSV download event observed; desktop and mobile layouts visually inspected |
+
+Reference example A uses 50 km, 500 mm bore, 6 kg/s, 8 MPa inlet, 313.15 K
+inlet and 283.15 K soil. For M4:
+
+- Outlet pressure: 7.912069162500649 MPa.
+- Outlet temperature: 286.4202708684077 K.
+- Pressure drop: 87.93083749935124 kPa.
+- Required inlet for a 7 MPa delivery target: 7.098694836959345 MPa.
+- Total compressor electrical power: 16.147617980053604 MW.
+- Incremental transport electrical power: 214.48947956208698 kW.
+
+The pressure figures represent absolute pressure. These are regression
+references, not measured accuracy claims. Browser metrics intentionally round
+for readability; exports retain the returned values. The energy residual is
+a numerical integral balance, not a validation confidence interval.
+
+Responsive checks include a 1440-pixel desktop, a 768-pixel tablet and a
+390-pixel mobile viewport. The tablet geometry and equation renderer were
+inspected, with no reported mathematical rendering errors.
+The mobile page has no document-level horizontal overflow; large numerical
+tables scroll within their container. Four-model legends remain legible.
+These are browser viewport checks, not tests on physical phones or all browsers.
+
+## Reproduce
+
+From the repository root, install requirements-dev.txt in Python 3.12, then run:
+
+```console
+python -m pip check
+python -m pytest -q
+python -m streamlit run app.py
+```
+
+## Still pending
+
+- Linux execution: no suitable local environment was available. The prepared
+  CI workflow has not been run on a remote host.
+- Public hosting, anonymous visitor access and cloud resource behaviour.
+- Full-scale experimental accuracy remains unestablished independently of
+  the software installation and browser checks.
