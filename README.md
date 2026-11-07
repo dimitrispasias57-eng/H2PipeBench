@@ -12,7 +12,8 @@ upstream terms. Source: [dimitrispasias57-eng/H2PipeBench](https://github.com/di
 The [initial public CI run](https://github.com/dimitrispasias57-eng/H2PipeBench/actions/runs/42388470631)
 passed all **87 tests on both Ubuntu and Windows**. The live default result and
 its 801-point exported profile were checked against retained references.
-See [testing evidence and limits](docs/TESTING.md).
+See [testing evidence and limits](docs/TESTING.md) and the
+[equation-by-equation methodology audit](docs/METHODOLOGY_AUDIT.md).
 
 ## Run locally
 
@@ -33,8 +34,9 @@ python -m streamlit run app.py
 
 For deployment, install `requirements.txt` only. The local package path in that
 file installs `vendor/h2pipebench`; no private research directory is needed.
-The included constraints pin tested transitive versions; Linux execution is
-still pending and must pass the supplied CI and cloud checks.
+The included constraints pin tested transitive versions. The initial release
+passed the supplied CI on Linux and Windows; each interface revision is checked
+again by the same workflow.
 Run all commands from this repository root. `.python-version` records the
 development interpreter; explicitly select Python 3.12 in Community Cloud's
 Advanced settings. No secret or environment credential is needed by the app.

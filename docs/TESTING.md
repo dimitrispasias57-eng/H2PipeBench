@@ -87,3 +87,30 @@ The live service rejected an overlapping calculation with its intended busy
 message. This verifies admission behaviour for that test, not load capacity.
 Full-scale experimental accuracy remains unestablished independently of these
 installation, browser and regression checks.
+
+## Methodology interface revision: 0.1.0rc1-web2
+
+The local Windows suite passed **87 tests in 15.69 s** after the methodology
+and model-selector revisions. The updated AppTest checks the explicit
+"All four models (M1–M4)" comparison selector, runs all four formulations,
+confirms single-model selection still works, and checks that all 45 equation
+records are displayed exactly once without escaped control characters.
+Scientific regression tests and stored reference data are unchanged.
+
+Browser inspection at 1440×1100, 768×1024 and 390×844 found all **45 display
+equations and 203 total mathematical elements** rendered, with zero KaTeX
+errors. All 12 method expanders were opened for this check. Document and main
+container horizontal overflow were zero at each size. The two widest display
+equations and some nomenclature tables scroll internally on mobile, rather
+than being scaled to illegible text or extending the page. The equations,
+subscripts, Greek symbols, signs, brackets, primes and all nomenclature rows
+were visually reviewed on desktop, with geometry/ODE views checked on tablet
+and heat-transfer/nomenclature views checked on mobile. Small diagram labels
+can be inspected using the existing fullscreen control; the geometry asset
+has not been changed.
+
+These are emulated browser viewport checks, not tests on physical devices or
+all browser engines. UI documentation is not experimental validation. See the
+[source mapping and dimensional audit](METHODOLOGY_AUDIT.md).
+GitHub Actions records Linux and Windows results for each published commit;
+the local visual check alone does not establish public deployment success.

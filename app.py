@@ -17,6 +17,8 @@ h1,h2,h3{letter-spacing:-.025em}h1{font-size:2.8rem!important}
 [data-testid="stMetric"]{background:#fff;border:1px solid #e0e8ed;border-radius:12px;padding:16px 18px}
 [data-testid="stMetricLabel"]{color:#536b7d}[data-testid="stMetricValue"]{font-size:1.8rem}
 [data-testid="stForm"]{background:white;border-color:#dce5eb;border-radius:14px}
+[data-testid="stMarkdownContainer"]>.katex-display{max-width:100%;overflow-x:auto}
+[data-testid="stMarkdownContainer"] table{display:block;max-width:100%;overflow-x:auto}
 .eyebrow{color:#087f8c;font-size:.77rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
 .hero-sub{color:#536b7d;font-size:1.15rem;margin-top:-.5rem}.badge{display:inline-block;background:#e2f2f1;color:#075e68;padding:5px 10px;border-radius:20px;font-size:.8rem}
 @media(max-width:700px){.block-container{padding:4rem 1rem 2rem}h1{font-size:2.1rem!important}[data-testid="stMetricValue"]{font-size:1.5rem}}
@@ -58,7 +60,12 @@ def configuration(compression=False):
         values['soil_conductivity']=number('Soil conductivity (W/(m K))','soil_conductivity',BOUNDS,draft,step=.1)
         values['adiabatic']=st.checkbox('Adiabatic environment',value=draft['adiabatic'],key='adiabatic',help='Disable environmental heat only. Isothermal models can still require thermostat heat.')
     with st.expander('4 · Numerical model selection',expanded=True):
-        model=st.selectbox('Physical model',list(MODELS),format_func=lambda m:' — '.join(MODELS[m]),key='model',disabled=page=='Model comparison')
+        if page=='Model comparison':
+            st.selectbox('Physical models',['All four models (M1–M4)'],disabled=True,key='comparison_models')
+            st.caption('Run Simulation solves M1, M2, M3 and M4 with identical pipeline inputs.')
+            model='real_coupled'  # Ignored by make_request for a four-model comparison.
+        else:
+            model=st.selectbox('Physical model',list(MODELS),format_func=lambda m:' — '.join(MODELS[m]),key='model')
         st.caption('Isothermal: imposed constant temperature. Non-isothermal: pressure and energy solved together. Real gas uses HEOS; ideal gas retains HEOS transport properties.')
         values['friction']=st.selectbox('Darcy friction',['colebrook','haaland'],index=['colebrook','haaland'].index(draft['friction']),key='friction')
         values['heat']=st.selectbox('Internal heat transfer',['gnielinski','dittus_boelter'],index=['gnielinski','dittus_boelter'].index(draft['heat']),key='heat')
@@ -193,7 +200,6 @@ if page in ('Simulator','Model comparison','Compression'):
                 st.markdown('**Start with a reproducible case**')
                 st.write('50 km length · 500 mm bore · 6 kg/s · 8 MPa absolute · 313.15 K inlet · 283.15 K soil. These are inputs from the retained Example A, not preloaded simulation outputs.')
 elif page=='Method & limits':
-    st.image(str(ROOT/'assets/geometry.png'),width='stretch')
     show_methodology()
 else:
     st.subheader('Software information and references')

@@ -37,6 +37,10 @@ def test_initial_screen_and_real_forward_result():
 
 def test_comparison_compression_and_information_pages():
     at=app();at.radio(key='workspace').set_value('Model comparison').run()
+    selector=at.selectbox(key='comparison_models')
+    assert selector.value=='All four models (M1–M4)'
+    assert selector.options==['All four models (M1–M4)'] and selector.disabled
+    assert not any(s.key=='model' for s in at.selectbox)
     submit(at,'Run Simulation')
     assert len(at.session_state['bundle']['results'])==4
     at.radio(key='workspace').set_value('Compression').run()
@@ -45,7 +49,19 @@ def test_comparison_compression_and_information_pages():
     assert at.metric[1].value=='16.147618 MW'
     assert at.metric[2].value=='214.489 kW'
     at.radio(key='workspace').set_value('Method & limits').run()
-    assert not at.exception and len(at.latex)>=6
+    from h2web.methodology import EQUATIONS
+    assert not at.exception
+    displayed=[e.value.removeprefix('$$\n').removesuffix('\n$$') for e in at.latex]
+    assert sorted(displayed)==sorted(v[0] for v in EQUATIONS.values())
+    assert 'Nomenclature — Symbols and Units' in [e.label for e in at.expander]
+    assert 'Numerical verification versus experimental validation' in [e.label for e in at.expander]
+    assert all(not any(ord(c)<32 for c in equation) for equation in displayed)
+    # Comparison mode must not remove the selectable single-model control elsewhere.
+    at.radio(key='workspace').set_value('Simulator').run()
+    at.selectbox(key='model').set_value('ideal_isothermal')
+    submit(at,'Run Simulation')
+    assert not at.exception and at.selectbox(key='model').value=='ideal_isothermal'
+    assert at.session_state['bundle']['results'][0]['model']=='ideal_isothermal'
     at.radio(key='workspace').set_value('Software').run()
     assert not at.exception
     next(b for b in at.button if b.label=='Clear session results').click().run()
