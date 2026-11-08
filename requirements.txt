@@ -6,4 +6,5 @@ scipy==1.16.3
 pandas==2.3.3
 CoolProp==8.0.0
 matplotlib==3.11.2
+# Local solver 0.1.0: update this marker on version changes to refresh Cloud dependencies.
 ./vendor/h2pipebench

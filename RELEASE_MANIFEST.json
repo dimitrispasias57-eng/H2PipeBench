@@ -74,8 +74,8 @@
     },
     {
       "path": "docs/DEPLOYMENT.md",
-      "bytes": 5688,
-      "sha256": "2a78014a8341d441b3a62c3d6d67ec74931187e4fac7972a03d55242675f77d6"
+      "bytes": 6147,
+      "sha256": "67695d5cd3573915badd8627fea4392d1747f7822907e8eadcf87e4ab2b1953b"
     },
     {
       "path": "docs/METHODOLOGY_AUDIT.md",
@@ -559,8 +559,8 @@
     },
     {
       "path": "requirements.txt",
-      "bytes": 148,
-      "sha256": "a1b371bcae531f44b78065b9ede83d79939cacd297be24cd1fa7408ba8603ec5"
+      "bytes": 239,
+      "sha256": "b8dc007d289bab0cbd0b8e01945a179f25812f9323ca91d64a787fec8bd75508"
     },
     {
       "path": "tests/reference/01_profile.csv",

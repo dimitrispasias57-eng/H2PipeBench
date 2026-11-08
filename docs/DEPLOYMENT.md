@@ -77,6 +77,13 @@ For later releases, obtain any newly necessary authentication or approval before
 publishing outside the approved scope. Propose manuscript updates separately;
 do not edit the research manuscripts as part of application deployment.
 
+When changing the vendored solver version, update the solver-version comment
+in root requirements.txt as well as its package metadata. Community Cloud can
+reload app source without reinstalling an already installed local dependency
+when requirements.txt is unchanged. After deployment, verify both the web and
+solver versions using a newly completed run's JSON export; a changed UI version
+alone does not establish that the package dependency was refreshed.
+
 ## Official deployment references (checked 7 November 2026)
 
 - https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy
