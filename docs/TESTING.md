@@ -135,3 +135,13 @@ and the relative tolerance remains 2e-8. No integration setting, scientific
 equation, historical output, benchmark or manuscript was modified.
 The CSV is generated through the existing export function without rounding
 the physical length to the spinner increment.
+
+## First tagged release: 0.1.0
+
+The 0.1.0 release retains the 90 scientific, API and web tests above and adds
+two release-integrity checks: installed package/web/metadata agreement, and
+exact inheritance of the scientific source apart from its version string.
+The release notes record the final commit's executed Windows/Ubuntu results
+and fresh public-app smoke check. Release status does not change any physical
+validation claim. Older sections and dependency inventories retain their
+original dates and version labels as historical evidence.

@@ -1,5 +1,5 @@
 # Tested Windows dependency versions. Constraints do not force platform-only dependencies to install.
-# Linux execution remains pending; run the included CI before announcing deployment.
+# Windows and Ubuntu execution is recorded in docs/TESTING.md and release CI.
 altair==6.3.0
 anyio==4.16.0
 attrs==26.1.0

@@ -1,9 +1,27 @@
 {
-  "version": "0.1.0rc1",
-  "source": "H2PipeBench release candidate; unmodified Python sources",
-  "sha256": {
+  "version": "0.1.0",
+  "source": "Inherited 0.1.0rc1 scientific implementation; only __version__ changed.",
+  "inherited_version": "0.1.0rc1",
+  "inherited_commit": "d932671900b62d87db8082e49a350bcd9e4173c0",
+  "inherited_sha256": {
     "src/h2pipebench/api.py": "512f69b7c8bfd3a562bcc52d441d2d842f0077df828a66fd19ed9f1b1487b976",
     "src/h2pipebench/__init__.py": "661d34274bc19b8485524c13303b1671caec69a40579cac443f3ddc0abc49693",
+    "src/h2pipebench/benchmarks/thermal.py": "aefa584a50e27fc5b7098a1898f84c632e7241dd722ffc87de94ceb9435e310e",
+    "src/h2pipebench/benchmarks/_thermal.py": "c54e3430ff9e0115cc9d32ee8c720554661171ba3df140a57da8d6f745b56cfd",
+    "src/h2pipebench/benchmarks/__init__.py": "fe70bf22df35729fd67838d9751572b2c1979921dd1e64d6815538aa6ba72f3e",
+    "src/h2pipebench/_core/compression.py": "696779180dcc1368eb1510f381f118a819d212ef574457e246fb44d0655b3a1e",
+    "src/h2pipebench/_core/config.py": "10d0c345df23b760b9f7771cfb42fffb07fe543854bcaaa6af0616efe223514e",
+    "src/h2pipebench/_core/equations.py": "6ebb46c89f1e4fb604bef81e78fca0b3ad27128e9cfd56b8edb5423b4e45ab13",
+    "src/h2pipebench/_core/friction.py": "5ed2d022c9a6d1007768f3ae05791a18a4aec31b02ee9bc741c0a03400b73136",
+    "src/h2pipebench/_core/heat_transfer.py": "29243b3e1428d6e72618ba424f40d797f8b5b6b7ae69bcc204cbc2de51b588f0",
+    "src/h2pipebench/_core/independent.py": "97f90105a29ea265b3e3acdf9d31982e3f1db44bbf6aaca6bd60d0aa478bcb73",
+    "src/h2pipebench/_core/properties.py": "9de5bf2ba8c74b3da5a75850cbe1db5064f3a43291a7dec289612f82c901192c",
+    "src/h2pipebench/_core/solver.py": "9abf1f8b648aab0864fc07321ccd673cf198a2a3a419a849ef22137c17b0fc7c",
+    "src/h2pipebench/_core/__init__.py": "cb7f333a3085ca94a1d24983f5661ddb844c114bc797f142e3b1645d719cc5e7"
+  },
+  "sha256": {
+    "src/h2pipebench/api.py": "512f69b7c8bfd3a562bcc52d441d2d842f0077df828a66fd19ed9f1b1487b976",
+    "src/h2pipebench/__init__.py": "1bed366d5966eaa9a6eaf6e2f8e561f1d1e8a74e19cab5a043fa245dc713ae47",
     "src/h2pipebench/benchmarks/thermal.py": "aefa584a50e27fc5b7098a1898f84c632e7241dd722ffc87de94ceb9435e310e",
     "src/h2pipebench/benchmarks/_thermal.py": "c54e3430ff9e0115cc9d32ee8c720554661171ba3df140a57da8d6f745b56cfd",
     "src/h2pipebench/benchmarks/__init__.py": "fe70bf22df35729fd67838d9751572b2c1979921dd1e64d6815538aa6ba72f3e",

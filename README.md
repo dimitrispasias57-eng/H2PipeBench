@@ -3,7 +3,7 @@
 **[Open the public simulator](https://h2pipebench.streamlit.app/)** — free browser
 access, with no visitor login or Python installation required.
 
-A Streamlit interface to H2PipeBench 0.1.0rc1 for steady, one-dimensional,
+A Streamlit interface to H2PipeBench 0.1.0 for steady, one-dimensional,
 horizontal pure-hydrogen pipeline calculations. It calls the actual package;
 there is no replacement hydraulic solver in the UI. Project code and geometry
 are distributed under the [MIT licence](LICENSE). Dependencies retain their
@@ -91,7 +91,8 @@ Do not enter confidential operating data into a public research demonstration.
 
 ## Reproduction and provenance
 
-- `vendor/h2pipebench/src/`: unmodified release-candidate source; verify against
+- `vendor/h2pipebench/src/`: inherited scientific source, with only the package
+  version changed for 0.1.0; current and inherited hashes are recorded in
   `vendor/h2pipebench/SOURCE_HASHES.json`.
 - `tests/solver/`: the release's existing numerical/API tests, copied unchanged.
 - `tests/reference/`: three retained output files used solely as regression
@@ -106,3 +107,17 @@ The public repository contains this standalone application tree. See
 RELEASE_MANIFEST.json for the payload hashes. AI assistance was used for
 implementation and checks. Experimental validation limitations remain visible
 independently of the software's release status.
+
+## Versioned research release
+
+The package and web interface use **0.1.0**. Download the tagged source from the
+[v0.1.0 GitHub release](https://github.com/dimitrispasias57-eng/H2PipeBench/releases/tag/v0.1.0).
+The release notes identify the tested commit and Windows/Ubuntu CI evidence.
+This is the first non-prerelease research distribution; the pre-1.0 API may
+still change. It does not establish experimental validation or industrial
+design suitability. The public app follows `main`; use the tag to reproduce
+this specific release. No Zenodo DOI has been assigned.
+
+Historical test reports, dependency inventories and numerical reference JSON
+retain their original release-candidate version labels. They are provenance
+records, not the current executable version. See [the changelog](CHANGELOG.md).

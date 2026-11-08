@@ -3,7 +3,7 @@ from .api import (
     Pipeline, SimulationResult, InletPressureResult, simulate,
     required_inlet_pressure, compressor_power, DomainError,
 )
-__version__ = "0.1.0rc1"
+__version__ = "0.1.0"
 __all__ = [
     "Pipeline", "SimulationResult", "InletPressureResult", "simulate",
     "required_inlet_pressure", "compressor_power", "DomainError", "__version__",

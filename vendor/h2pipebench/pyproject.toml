@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "h2pipebench"
-version = "0.1.0rc1"
+version = "0.1.0"
 description = "Reproducible single-pipe hydrogen calculations and numerical verification"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
@@ -12,7 +12,7 @@ dependencies = ["numpy>=2.0,<3", "scipy>=1.14,<2", "pandas>=2.2,<4", "CoolProp>=
 license = "MIT"
 license-files = ["LICENSE.txt"]
 # The copyright notice uses the maintainer's public GitHub handle.
-classifiers = ["Development Status :: 3 - Alpha", "Programming Language :: Python :: 3.12", "Topic :: Scientific/Engineering :: Physics"]
+classifiers = ["Development Status :: 4 - Beta", "Programming Language :: Python :: 3.12", "Topic :: Scientific/Engineering :: Physics"]
 
 [project.optional-dependencies]
 examples = ["matplotlib>=3.9,<4"]

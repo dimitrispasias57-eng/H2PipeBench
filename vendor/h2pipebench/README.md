@@ -1,21 +1,18 @@
 # H2PipeBench solver payload
 
-Version 0.1.0rc1. Distributed under the [MIT licence](LICENSE.txt).
+Version 0.1.0. Distributed under the [MIT licence](LICENSE.txt).
 
-This directory carries the unchanged 14 Python source files from the verified
-H2PipeBench release candidate. SOURCE_HASHES.json records their SHA-256 hashes.
-The scientific source is retained; the packaging metadata records the approved
-MIT licence. This short README replaces the original
-package README because this web distribution omits its standalone examples,
-reports and manuscript-related release instructions.
+This directory carries the 14 Python source files inherited from the verified
+0.1.0rc1 solver. Only the package `__version__` string changed for 0.1.0.
+All governing equations, coefficients, integration settings and algorithms
+are unchanged. SOURCE_HASHES.json records both current and inherited hashes;
+release tests verify that the version string is the only source difference.
 
-Install and run from the [web application root](../../README.md), using its
-requirements.txt. The local package is installed as a dependency; it is not
-downloaded from an unverified package with the same name.
-
-See the web distribution's [scientific methods](../../docs/SCIENCE.md),
-[limitations and privacy](../../docs/SECURITY_AND_PRIVACY.md), and
-[release checklist](../../docs/RELEASE_CHECKLIST.md).
+Install the complete app from the [repository root](https://github.com/dimitrispasias57-eng/H2PipeBench/tree/v0.1.0),
+using its requirements.txt. This local package is installed as a dependency;
+it is not downloaded from an unverified package with the same name.
+The public distribution omits the private research archive, manuscripts and
+standalone historical reports.
 
 The source implements steady, horizontal, one-dimensional pure-hydrogen pipe
 calculations, four thermodynamic/thermal formulations, delivery-pressure

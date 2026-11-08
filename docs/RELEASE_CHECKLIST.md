@@ -37,3 +37,17 @@ browser profile. The browser's cloud PNG event was not captured; its actual
 generated payload was successfully retrieved separately. See TESTING.md.
 
 Do not convert numerical agreement into an experimental-validation claim.
+
+## Version 0.1.0 release gate
+
+The maintainer requested the first official GitHub release on 8 November 2026.
+Version metadata is aligned across package, installed distribution and web app.
+Current and inherited source hashes distinguish the single version-string edit
+from the unchanged scientific implementation. Numerical reference files retain
+their original bytes and version labels.
+
+Publish the tag only after the final commit passes the complete test matrix,
+installation checks and public-app smoke verification. Record executed results
+in the GitHub release notes. GitHub supplies ZIP and tar.gz source downloads.
+Keep the existing MIT licence and free hosting. No Zenodo archive or manuscript
+submission is part of this release. The 0.x API remains subject to change.

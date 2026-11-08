@@ -1,10 +1,10 @@
 {
-  "release": "H2PipeBench 0.1.0rc1-web3",
+  "release": "H2PipeBench 0.1.0",
   "repository": "https://github.com/dimitrispasias57-eng/H2PipeBench",
   "public_app": "https://h2pipebench.streamlit.app/",
   "licence": "MIT",
   "copyright": "2026 dimitrispasias57-eng",
-  "status": "Decimal length input revision; CI status is reported by GitHub Actions.",
+  "status": "First official research release; executed final-commit checks are recorded in the GitHub release notes.",
   "scope": "Every payload file; manifest excludes itself; Git metadata is not part of distribution.",
   "files": [
     {
@@ -33,14 +33,19 @@
       "sha256": "d40358dcce63dea868d68f3a5c5d7b9c55e4add03841028d3e8b5be58df0645e"
     },
     {
+      "path": "CHANGELOG.md",
+      "bytes": 1508,
+      "sha256": "ad70890aeef97fad70a115157b28a72df494774729168526dc9a132e9b52ae4b"
+    },
+    {
       "path": "LICENSE",
       "bytes": 1077,
       "sha256": "f39c048d215f3a1ba1d660f50a4ca231db29c448d888d86220305fa0b9667b23"
     },
     {
       "path": "README.md",
-      "bytes": 5750,
-      "sha256": "8e9bde7acb017e749d5d5fb2a873388b84f9e93f79e704e02c8319e406fe77ce"
+      "bytes": 6624,
+      "sha256": "8c950d9ac94e9577c6b141c0198a73a25636e38e7021f1c62b3e12b8d6cd30ec"
     },
     {
       "path": "app.py",
@@ -59,8 +64,8 @@
     },
     {
       "path": "constraints.txt",
-      "bytes": 1074,
-      "sha256": "376c73ec2405785912beb5122b89c7df81680b4eb722cac80f429f791dc8a865"
+      "bytes": 1067,
+      "sha256": "73cd8bce7af31dee7134d7900690e0702171edb7938f5d486225fbdd8f11d6fb"
     },
     {
       "path": "docs/DEPENDENCIES_AND_LICENCES.md",
@@ -79,8 +84,8 @@
     },
     {
       "path": "docs/RELEASE_CHECKLIST.md",
-      "bytes": 2785,
-      "sha256": "88bb036f06d5522fdc8ae3a6aec697e4cb3f77b911846a67eb10070799164467"
+      "bytes": 3565,
+      "sha256": "67faf65c049e9bc639ffa2912445a5c8f6522e44ef21f4fee4dcea1eba0a104f"
     },
     {
       "path": "docs/SCIENCE.md",
@@ -94,8 +99,8 @@
     },
     {
       "path": "docs/TESTING.md",
-      "bytes": 8500,
-      "sha256": "a38b34210f24d7996b9d4d38a3313ca3473cac6ee0f40738a9097cc2e4a16794"
+      "bytes": 9046,
+      "sha256": "c2bd557f838ef586b0bf9c547ea6da21f2f7216d86d3a84cfaf09650995b7e02"
     },
     {
       "path": "docs/dependency_inventory.json",
@@ -514,8 +519,8 @@
     },
     {
       "path": "h2web/__init__.py",
-      "bytes": 103,
-      "sha256": "3b95d76d4f54c975921ea2b3d53510c9adbb1859e5f4d035e3d83f2e68a17dd4"
+      "bytes": 95,
+      "sha256": "3f6ec556d20d9623f8061ae52799c9d0ac08cfa14335e2686da9e273e49c8db5"
     },
     {
       "path": "h2web/calculations.py",
@@ -583,6 +588,11 @@
       "sha256": "172fbd315847dc1654944479c20ad46cebd5f5e16e32f9b5a2838c67dec84368"
     },
     {
+      "path": "tests/test_release.py",
+      "bytes": 1333,
+      "sha256": "5fbb0d26f74194d7b685f97bebc0e5b96e519ffd46f6278c64ff376093113ca0"
+    },
+    {
       "path": "tests/test_streamlit.py",
       "bytes": 5517,
       "sha256": "f5a26b6d67d8a13ae34402418fb1ea60ad5aa5d496ee61de1cffdef93c1a01d0"
@@ -599,23 +609,23 @@
     },
     {
       "path": "vendor/h2pipebench/README.md",
-      "bytes": 1528,
-      "sha256": "1c4eb2e6f30b9f1c63095b8f5c3e90156def6314be0f2d7d940bf4d5204fc9f3"
+      "bytes": 1452,
+      "sha256": "98d31ba3a763c1f26585be2ec4739efde4541c92f404f64874ea1dd16e8165fc"
     },
     {
       "path": "vendor/h2pipebench/SOURCE_HASHES.json",
-      "bytes": 1669,
-      "sha256": "50a2038c566d15ff415c14f5162fb1666307c9275e12b79b258c7218a20efba3"
+      "bytes": 3325,
+      "sha256": "2a82d8f0907b6174ca75a596efd2aad1d871edebcbd26f5424940e67f7accc11"
     },
     {
       "path": "vendor/h2pipebench/pyproject.toml",
-      "bytes": 859,
-      "sha256": "26d6bcfdbdd33fd9fe0fb97d21f88793a5b721b4f956be20990c0c878660aa53"
+      "bytes": 855,
+      "sha256": "c0e58d3d54d9c5acaa11aa1fe66c6f7ffa9597d24cf17a509438bc56ef0702a4"
     },
     {
       "path": "vendor/h2pipebench/src/h2pipebench/__init__.py",
-      "bytes": 390,
-      "sha256": "661d34274bc19b8485524c13303b1671caec69a40579cac443f3ddc0abc49693"
+      "bytes": 387,
+      "sha256": "1bed366d5966eaa9a6eaf6e2f8e561f1d1e8a74e19cab5a043fa245dc713ae47"
     },
     {
       "path": "vendor/h2pipebench/src/h2pipebench/_core/__init__.py",
