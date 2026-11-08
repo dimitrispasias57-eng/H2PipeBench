@@ -1,10 +1,10 @@
 {
-  "release": "H2PipeBench 0.1.0rc1-web2",
+  "release": "H2PipeBench 0.1.0rc1-web3",
   "repository": "https://github.com/dimitrispasias57-eng/H2PipeBench",
   "public_app": "https://h2pipebench.streamlit.app/",
   "licence": "MIT",
   "copyright": "2026 dimitrispasias57-eng",
-  "status": "Methodology interface revision; CI status is reported by GitHub Actions.",
+  "status": "Decimal length input revision; CI status is reported by GitHub Actions.",
   "scope": "Every payload file; manifest excludes itself; Git metadata is not part of distribution.",
   "files": [
     {
@@ -44,8 +44,8 @@
     },
     {
       "path": "app.py",
-      "bytes": 19809,
-      "sha256": "b36a1f34f3c5f656e94df89b517b6a93632a3cacb6f2242e68d83d461acbe4e2"
+      "bytes": 19995,
+      "sha256": "c82c46ae4f5e60fc4364780c0446b8d8f07bf2d44cdc99bb60a1223f227bbec6"
     },
     {
       "path": "assets/geometry.png",
@@ -94,8 +94,8 @@
     },
     {
       "path": "docs/TESTING.md",
-      "bytes": 7282,
-      "sha256": "6555f2112dba46027aeca6b9617d3b74b59e4edc797343792b6d44662e119d51"
+      "bytes": 8500,
+      "sha256": "a38b34210f24d7996b9d4d38a3313ca3473cac6ee0f40738a9097cc2e4a16794"
     },
     {
       "path": "docs/dependency_inventory.json",
@@ -515,7 +515,7 @@
     {
       "path": "h2web/__init__.py",
       "bytes": 103,
-      "sha256": "2b29ba7375482895f6f995a536a7f302a3098b72a85f9b031c7826942ba44869"
+      "sha256": "3b95d76d4f54c975921ea2b3d53510c9adbb1859e5f4d035e3d83f2e68a17dd4"
     },
     {
       "path": "h2web/calculations.py",
@@ -584,8 +584,8 @@
     },
     {
       "path": "tests/test_streamlit.py",
-      "bytes": 3179,
-      "sha256": "9b172a05cc4e72f884df85de4436efb8fa7d3e79f63882e19527ebf5f25451c4"
+      "bytes": 5517,
+      "sha256": "f5a26b6d67d8a13ae34402418fb1ea60ad5aa5d496ee61de1cffdef93c1a01d0"
     },
     {
       "path": "tests/test_web.py",

@@ -42,7 +42,8 @@ def configuration(compression=False):
     with st.expander('1 · Pipeline configuration',expanded=True):
         a,b=st.columns(2)
         with a:
-            values['length_km']=number('Length (km)','length_km',BOUNDS,draft,step=10.)
+            values['length_km']=number('Length (km)','length_km',BOUNDS,draft,step=1.,format='%.2f',
+                help='Use the arrows for 1 km changes, or type a decimal length such as 12.5 km. This input sets physical pipe length, not the numerical integration step.')
             values['wall_mm']=number('Wall thickness (mm)','wall_mm',BOUNDS,draft,step=1.)
             values['burial_m']=number('Burial depth (m)','burial_m',BOUNDS,draft,help='Ground surface to pipe centreline; must exceed the outside radius.',step=.1)
         with b:

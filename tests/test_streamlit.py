@@ -1,5 +1,9 @@
 from pathlib import Path
+from io import BytesIO
 import time
+import numpy as np
+import pandas as pd
+import pytest
 from streamlit.testing.v1 import AppTest
 
 APP=Path(__file__).resolve().parents[1]/'app.py'
@@ -66,3 +70,45 @@ def test_comparison_compression_and_information_pages():
     assert not at.exception
     next(b for b in at.button if b.label=='Clear session results').click().run()
     assert 'bundle' not in at.session_state
+
+
+@pytest.mark.parametrize('page,button,count',[
+    ('Simulator','Run Simulation',1),
+    ('Model comparison','Run Simulation',4),
+    ('Compression','Calculate delivery & power',1),
+])
+def test_decimal_length_reaches_solver_and_csv(page,button,count):
+    from h2web.exports import profiles_csv
+    at=app()
+    if page!='Simulator':at.radio(key='workspace').set_value(page).run()
+    length=at.number_input(key='length_km')
+    assert length.value==50.
+    assert (length.proto.min,length.proto.max,length.proto.step)==(.01,200.,1.)
+    length.set_value(12.5)
+    submit(at,button)
+    assert at.number_input(key='length_km').value==12.5
+    bundle=at.session_state['bundle']
+    assert bundle['request']['inputs']['length_km']==12.5
+    assert bundle['status']=='complete' and len(bundle['results'])==count
+    csv=pd.read_csv(BytesIO(profiles_csv(bundle)))
+    for result in bundle['results']:
+        assert result['pipeline_inputs_si']['length_m']==12500.
+        data=pd.DataFrame(result['profile'])
+        exported=csv[csv.model==result['model']]
+        assert data.x_m.iloc[0]==0. and data.x_m.iloc[-1]==12500.
+        assert exported.x_m.iloc[-1]==12500.
+        np.testing.assert_allclose(exported[data.columns],data,rtol=1e-12,atol=1e-12)
+        assert exported.p_Pa.iloc[-1]==pytest.approx(result['summary']['p_out_Pa'],rel=1e-12)
+        assert exported.T_K.iloc[-1]==pytest.approx(result['summary']['T_out_K'],rel=1e-12)
+        assert result['summary']['rtol']==2e-8
+        assert result['summary']['max_step_m']==12500./40  # Existing L/40 rule.
+    if page=='Compression':
+        assert abs(bundle['compressor']['delivery_residual_Pa'])<.1
+        assert bundle['results'][0]['summary']['p_out_Pa']==pytest.approx(7e6,abs=.1)
+    else:
+        from h2pipebench import Pipeline, simulate
+        # Direct API call bypasses the UI conversion and supplies SI length explicitly.
+        expected=simulate(Pipeline(length_m=12500.),'real_coupled',audit_points=801)
+        actual=next(r for r in bundle['results'] if r['model']=='real_coupled')
+        assert actual['summary']['p_out_Pa']==pytest.approx(expected.summary['p_out_Pa'],rel=1e-12)
+        assert actual['summary']['T_out_K']==pytest.approx(expected.summary['T_out_K'],rel=1e-12)

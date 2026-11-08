@@ -114,3 +114,24 @@ all browser engines. UI documentation is not experimental validation. See the
 [source mapping and dimensional audit](METHODOLOGY_AUDIT.md).
 GitHub Actions records Linux and Windows results for each published commit;
 the local visual check alone does not establish public deployment success.
+
+## Decimal pipeline length: 0.1.0rc1-web3
+
+On 8 November 2026, the Windows suite passed **90 tests in 23.41 s**.
+The three added AppTest cases submit 12.5 km separately through Simulator,
+Model comparison and Compression. They check the shared 1 km spinner step,
+decimal acceptance, 50 km initial default and unchanged 0.01–200 km limits.
+These are the existing interface bounds, not a newly validated physical range.
+
+Each returned model records length_m = 12,500 and ends at x_m = 12,500.
+Every numeric CSV profile column matches the completed result snapshot,
+including final pressure and temperature. Simulator and comparison M4 outputs
+also match a direct public solver API call with length_m = 12,500. Compression
+reaches the unchanged 7 MPa delivery target to within 0.1 Pa for this test case.
+
+The control sets physical length; it does not set an integration step.
+The unchanged maximum-step rule remains L/40 (312.5 m for this 12.5 km case),
+and the relative tolerance remains 2e-8. No integration setting, scientific
+equation, historical output, benchmark or manuscript was modified.
+The CSV is generated through the existing export function without rounding
+the physical length to the spinner increment.
